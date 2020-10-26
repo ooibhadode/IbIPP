@@ -44,6 +44,22 @@
  %                   .  center of revolution to the left for revolution-based modeling
  %   revolutionAngle .  The angle of revolution for revolution-based modeling
  %
+ % %   Table: Color codes (RGB) for creating an input image file
+  %   -----------------------------------------------------------------------
+  %   Features                Color code rules            Recommended values                                       
+  %   -----------------------------------------------------------------------
+  %   Designable domain       R∩G∩B<200                      0     0     0
+  %   Non-designable domain	R∩G∩B>200                     255   255   255
+  %   Point load              200≤R*≤255,G=0,B=0            200    0     0
+  %   Pressure                200≤R≤230,100≤G*≤150,B=0     200   100    0
+  %   Preserved region        R=0,200≤G≤255,B=0              0    200    0
+  %   Fixed region            R=0,G=0,200≤B≤255              0     0    200
+  %   Region fixed along x	100≤R≤150,G=0,200≤B≤255      100    0    200
+  %   Region fixed along y	R=0,200≤G≤255,200≤B≤255       0    200   200        
+  %   * for multiple forces or pressure, R should be in multiples of 5
+  %   starting from 200 for forces (200, 205, 210,...etc) and G should be
+  %   in multiples of 5 starting from 100 for pressures (100, 105, 110,..etc)
+  %
  %
  %   Example 1:
  %     % Optimize a half-MBB using default values of optional inputs
