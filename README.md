@@ -11,7 +11,7 @@
  %   the required volume fraction, VOLFRAC and other default parameters.
  %
  %   IBIPP(FILE, NELX, VOLFRAC, FMAG, FANG) Performs topology optimization
- %   using FILE, NELX, VOLFRAC, vectors of force magnitudes, FMAG and
+ %   using FILE, NELX, VOLFRAC, vectors of force magnitudes, FMAG, and
  %   force angles, FANG, and other default parameters
  %
  %   IBIPP(...,'PropertyName',VALUE,'PropertyName',VALUE,...) performs

@@ -1,5 +1,5 @@
 %% Matlab code for topology optimization using a reaction diffusion equation
-function [str,phi] = levelset88(nelx,nely,Vmax,tau,F,fixeddofs,NonD,MusD,E0,v)
+function [str,phi] = levelset88mod(nelx,nely,Vmax,tau,F,fixeddofs,NonD,MusD,E0,v)
 %% Parameter definition
 E0 = E0*1;
 Emin = E0*(1e-4);
@@ -13,10 +13,10 @@ str = ones(nely,nelx);
 volInit = sum(str(:))/(nelx*nely);
 %% Finite element analysis preparation
 % For displacement field
-A11 = [12 3 -6 -3; 3 12 3 0; -6 3 12 -3; -3 0 -3 12]; 
-A12 = [-6 -3 0 3; -3 -6 -3 -6; 0 -3 -6 3; 3 -6 3 -6]; 
-B11 = [-4 3 -2 9; 3 -4 -9 4; -2 -9 -4 -3; 9 4 -3 -4]; 
-B12 = [ 2 -3 4 -9; -3 2 9 -2; 4 9 2 3; -9 -2 3 2]; 
+A11 = [12 3 -6 -3; 3 12 3 0; -6 3 12 -3; -3 0 -3 12];
+A12 = [-6 -3 0 3; -3 -6 -3 -6; 0 -3 -6 3; 3 -6 3 -6];
+B11 = [-4 3 -2 9; 3 -4 -9 4; -2 -9 -4 -3; 9 4 -3 -4];
+B12 = [ 2 -3 4 -9; -3 2 9 -2; 4 9 2 3; -9 -2 3 2];
 KE = 1/(1-nu^2)/24*([A11 A12;A12' A11]+nu*[B11 B12;B12' B11]);
 % For topological derivative
 a1 = 3*(1-nu)/(2*(1+nu)*(7-5*nu))*(-(1-14*nu+15*nu^2)*E0)/(1-2*nu)^2;
@@ -54,14 +54,14 @@ for iterNum = 1:200
     sK = reshape(KE(:)*(Emin+str(:)'*(E0-Emin)),64*nelx*nely,1);
     K = sparse(iK,jK,sK);
     K = (K+K')/2;
-	U(freedofs,:) = K(freedofs,freedofs) \ F(freedofs,:); 
+	U(freedofs,:) = K(freedofs,freedofs) \ F(freedofs,:);
     SED = zeros(nely,nelx); TD = zeros(nely,nelx);
     for i = 1:size(F,2)
         U1 = U(:,i);
         SED = SED + (Emin+str*(E0-Emin)).*reshape(sum((U1(edofMat)*KE).*U1(edofMat),2),nely,nelx);
         TD = TD + (1e-4+str*(1-1e-4)).*reshape(sum((U1(edofMat)*A).*U1(edofMat),2),nely,nelx);
-    end 
-	
+    end
+
 	td2=[TD(1,1) TD(1,:) TD(1,end); TD(:,1) TD TD(:,end) ; TD(end,1) TD(end,:) TD(end,end)];
 	TDN = 0.25*(td2(1:end-1,1:end-1)+td2(2:end,1:end-1)+td2(1:end-1,2:end)+td2(2:end,2:end));
 	objective(iterNum) = sum(SED(:));
@@ -90,4 +90,3 @@ for iterNum = 1:200
 	str(:,:) = (phie(:,:)>0);
     str(NonD) = 0; str(MusD) = 1;
 end
-

@@ -1,5 +1,5 @@
 %%%% AN 88 LINE TOPOLOGY OPTIMIZATION CODE Nov, 2010 %%%%
-function xPhys = top88(nelx,nely,volfrac,penal,rmin,ft,F,fixeddofs,NonD,MusD,IM,q,beta,E0,v)
+function xPhys = top88mod(nelx,nely,volfrac,penal,rmin,ft,F,fixeddofs,NonD,MusD,IM,q,beta,E0,v)
 %% MATERIAL PROPERTIES
 E0 = E0*1;
 Emin = E0*(1e-9);
@@ -46,21 +46,21 @@ Hs = sum(H,2);
 x = repmat(volfrac,nely,nelx);
 if ft == 1 || ft == 2
     xPhys = x; change_thresh = 1e-2;
-else 
+else
     xTilde = x; change_thresh = 1e-4;
     xPhys = 1-exp(-beta*xTilde)+xTilde*exp(-beta);
-end 
+end
 loop = 0; loopbeta = 0;
 change = 1;
 %% START ITERATION
-while change > change_thresh && loop <= 500
+while change > change_thresh && loop <= 300
   loop = loop + 1; loopbeta = loopbeta+1;
   %% FE-ANALYSIS
   if strcmpi(IM,'SIMP')
       sK = reshape(KE(:)*(Emin+xPhys(:)'.^penal*(E0-Emin)),64*nelx*nely,1);
-  else 
+  else
       sK = reshape(KE(:)*(xPhys(:)'./(1+q*(1-xPhys(:)')))*E0,64*nelx*nely,1);
-  end 
+  end
   K = sparse(iK,jK,sK); K = (K+K')/2;
   U(freedofs,:) = K(freedofs,freedofs)\F(freedofs,:);
   %% OBJECTIVE FUNCTION AND SENSITIVITY ANALYSIS        % changed
@@ -71,7 +71,7 @@ while change > change_thresh && loop <= 500
       if strcmpi(IM,'SIMP')
           c = c + sum((Emin+xPhys(:)'.^penal*(E0-Emin))*ce(:));
           dc = dc-penal.*xPhys.^(penal-1).*(E0-Emin).*ce;
-      else 
+      else
           c = c + sum((xPhys(:)'./(1+q*(1-xPhys(:)')))*(E0)*ce(:));
           dc = dc-(((1+q*(1-xPhys))+q*xPhys)./(1+q*(1-xPhys)).^2).*E0.*ce;
       end
@@ -114,8 +114,8 @@ while change > change_thresh && loop <= 500
   colormap(gray); imagesc(1-xPhys); caxis([0 1]); axis equal; axis off; drawnow;
  if ft == 3 && beta < 512 && (mod(loopbeta,50)==0 || change <=1E-2)
      beta = 2*beta;
- else 
- end 
+ else
+ end
 end
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,4 +1,4 @@
-function x = esoL(nelx,nely,volfrac,er,rmin,F,fixeddofs,NonD,MusD,E0,v)
+function x = esoLmod(nelx,nely,volfrac,er,rmin,F,fixeddofs,NonD,MusD,E0,v)
 %% INITIALIZATION
 vol = 1; change = 1; ij = 0;
 x = ones(nely,nelx);
@@ -47,7 +47,7 @@ while change > 0.001
     for i = 1:size(F,2)
         U1 = U(:,i);
         ce = ce + reshape(sum((U1(edofMat)*KE).*U1(edofMat),2),nely,nelx);
-    end 
+    end
     c(ij) = sum(sum((x.*E0).*ce));
     dc = (x.*E0).*ce;
     %% FILTERING/MODIFICATION OF SENSITIVITIES
