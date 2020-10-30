@@ -60,6 +60,7 @@
     starting from 200 for forces (200, 205, 210,...etc) and *G* should be
     in multiples of 5 starting from 100 for pressures (100, 105, 110,..etc)
  ## Examples:
+    The following examples show how **ibipp** can be used. Images of the design problems and their corresponding input images for **ibipp** have been prepared and are in this repository. **Table 2** should be used to prepare the input image for a design problem while **Table 3** is outlines the possible inputs in **ibipp**.
   *  Example 1:
     Optimize a half-MBB using default values of optional inputs
      - **ibipp('ex1.png',150,0.4)**
