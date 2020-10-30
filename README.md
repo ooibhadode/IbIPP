@@ -80,5 +80,6 @@
     'modeltype','extrude','extrudelength',0.2)
 
  ## Supporting Open-Source Codes
-    **IbIPP** utilizes other open-source codes such as [top88.m](https://www.topopt.mek.dtu.dk/apps-and-software) by
-    Andreassen et.al, 
+    IBIPP utilizes other open-source codes such as [top88.m](https://www.topopt.mek.dtu.dk/apps-and-software) by
+    Andreassen et.al, [esoL.m](https://link.springer.com/article/10.1007/s11831-016-9203-2) by Xia et. al., [levelset88.m](http://www.osdel.me.kyoto-u.ac.jp/members/yamada/codes.html.) by Otomori et.al,
+    [revolve2D.m](http://www.k-wave.org/) by Treeby and Cox, and [stlwrite.m](https://www.mathworks.com/matlabcentral/fileexchange/20922-stlwrite-write-ascii-or-binary-stl-files) by Sven.
