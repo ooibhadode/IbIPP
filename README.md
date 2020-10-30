@@ -66,19 +66,19 @@
 
   *  Example 2:
       % Optimize a Hammerhead pier using the BESO approach
-      ibipp('ex2.png',200,0.5,[2 1 1 2],[180 180 180 180],'optimization',...
+      ibipp('ex2.png',200,0.5,[2 1 1 2],[180 180 180 180],'optimization',
     'BESO','filterRadius',3)
 
   *  Example 3:
       % Optimize a 2-point loading mechanical part while preserving load
       and support elements
-      ibipp('ex3.png',300,0.45,[1 1],[0 0],'optimization','levelset',...
+      ibipp('ex3.png',300,0.45,[1 1],[0 0],'optimization','levelset',
     'tau',5e-5,'preserveLoad',1,'preserveSupport',1)
 
   *  Example 4:
       % Optimize a half-spanner design and generate an extruded full
       spanner STL model
-     ibipp('half_spanner.png',250,0.5,'pressure',[1,1],'preserveload',2,...
+     ibipp('half_spanner.png',250,0.5,'pressure',[1,1],'preserveload',2,
     'preservesupport',1,'modelname','spanner.stl','symmetry','left',...
     'modeltype','extrude','extrudelength',0.2)
 
