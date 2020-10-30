@@ -3,9 +3,9 @@
  is an open-source code for initializing and post-processing free-form 2D topology optimization problems.
 
  ## Syntax
- * **ibipp(*file*, *nelx*, *volfrac*)** Performs topology optimization on the image provided in *file* using the number of elements in the x-direction, *nelx*, the required volume fraction, *volfrac* and other default parameters.
+ * **ibipp(*file*, *nelx*, *volfrac*)** Performs topology optimization on the image provided in *file* using the number of elements in the x-direction *nelx*, the required volume fraction *volfrac*, and other default parameters.
 
- * **ibipp(*file*, *nelx*, *volfrac*,*fmag*,*fang*)** Performs topology optimization using *file*, *nelx*, *volfrac*, vectors of force magnitudes, *fmag*, and force angles, *fang*, and other default parameters.
+ * **ibipp(*file*, *nelx*, *volfrac*,*fmag*,*fang*)** Performs topology optimization using *file*, *nelx*, *volfrac*, vectors of force magnitudes *fmag*, and force angles *fang*, and other default parameters.
 
  * **IBIPP(...,'PropertyName',VALUE,'PropertyName',VALUE,...)** performs topology optimization using the following property values:
  ### Table 1: Name-value inputs
