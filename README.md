@@ -28,8 +28,7 @@
  |  PoissonRatio     |   Poisson Ratio material property                       |
  |  modelName        | Name given to model obtained by extrusion or revolution of the optimized topology. Must end in .stl |
  |  modelType        |  Modeling by extrusion or revolution                    |
- |  extrudeLength    |  Length for extrusion. It is a factor multiplied by the minimum between nelx and nely to obtain the length |
- |                   |  of the 3rd dimension                                   |
+ |  extrudeLength    |  Length for extrusion - a factor multiplied by min(*nelx*,*nely*) to obtain the length of the 3rd dimension|
  |  symmetry         | Specifies the position of the line of symmetry for symmetry-based modeling |
  |  distancetoaxis   | Distance between the optimized topology and its revolution axis to the left for revolution-based modeling |
  |  revolutionAngle  | The angle of revolution for revolution-based modeling   |
