@@ -13,33 +13,25 @@
  |    Name-value     |                      Description                        |
  |-------------------|---------------------------------------------------------|
  |  pressure         |   Pressure loads (multiple loads must be in a vector)   |
- |  optimization     |   Topology optimization approach                        |
+ |  optimization     |   Type of topology optimization approach                |
  |  densityType      |    Type of density-based method                         |
- |  preserveSupport  |  Preserve elements within the support region in the     |
- |                   |  image                                                  |
- |  preserveLoad     |  Preserve elements within the load region in the        |
- |                   |   image                                                 |
- |  filterRadius     |   Specify filter radius for density-based and BESO      |
- |                   |   approaches                                            |
+ |  preserveSupport  |  Preserve elements within the support region in the image |
+ |  preserveLoad     |  Preserve elements within the load region in the image  |
+ |  filterRadius     |   Specify filter radius for density-based and BESO approaches |
  |  filter           |   Specify filter type for density-based approaches      |
  |  beta             |  Regularization parameter for Heaviside projection      |
  |  penaltySIMP      |  Penalty value for SIMP density-based approach          |
  |  penaltyRAMP      |  Penalization factor for RAMP density-based approach    |
  |  ER               |  Evolution ratio for BESO                               |
- |  tau              |  Regularization parameter for level set method          |
- |                   |   (reaction diffusion)                                  |
+ |  tau              |  Regularization parameter for level set method (reaction diffusion) |
  |  YoungsModulus    |  Youngs Modulus material property                       |
  |  PoissonRatio     |   Poisson Ratio material property                       |
- |  modelName        | Name given to model obtained by extrusion or revolution |
- |                   |  of the optimized topology. Must end in .stl            |
+ |  modelName        | Name given to model obtained by extrusion or revolution of the optimized topology. Must end in .stl |
  |  modelType        |  Modeling by extrusion or revolution                    |
- |  extrudeLength    |  Length for extrusion. It is a factor multiplied by     |
- |                   |  the minimum of nelx and nely to obtain the length of   |
- |                   |  the 3rd dimension                                      |
- |  symmetry         | Specifies the position of the line of symmetry for      |
- |                   |  symmetry-based modeling                                |
- |  distancetoaxis   | Distance between the optimized topology and its center  |
- |                   | of revolution to the left for revolution-based modeling |
+ |  extrudeLength    |  Length for extrusion. It is a factor multiplied by the minimum between nelx and nely to obtain the length |
+ |                   |  of the 3rd dimension                                   |
+ |  symmetry         | Specifies the position of the line of symmetry for symmetry-based modeling |
+ |  distancetoaxis   | Distance between the optimized topology and its revolution axis to the left for revolution-based modeling |
  |  revolutionAngle  | The angle of revolution for revolution-based modeling   |
 
  ###   Table 2: Color codes (RGB) for creating an input image file
