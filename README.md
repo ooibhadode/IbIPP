@@ -9,29 +9,41 @@
 
  * **IBIPP(...,'PropertyName',VALUE,'PropertyName',VALUE,...)** performs topology optimization using the following property values:
  ### Table 1: Name-value inputs
---------------------------------------------------------------------------------
- |    Name-value     |                      Description                        |
- |-------------------|---------------------------------------------------------|
- |  pressure         |   Pressure loads (multiple loads must be in a vector)   |
- |  optimization     |   Type of topology optimization approach                |
- |  densityType      |    Type of density-based method                         |
- |  preserveSupport  |  Preserve elements within the support region in the image |
- |  preserveLoad     |  Preserve elements within the load region in the image  |
- |  filterRadius     |   Specify filter radius for density-based and BESO approaches |
- |  filter           |   Specify filter type for density-based approaches      |
- |  beta             |  Regularization parameter for Heaviside projection      |
- |  penaltySIMP      |  Penalty value for SIMP density-based approach          |
- |  penaltyRAMP      |  Penalization factor for RAMP density-based approach    |
- |  ER               |  Evolution ratio for BESO                               |
- |  tau              |  Regularization parameter for level set method (reaction diffusion) |
- |  YoungsModulus    |  Youngs Modulus material property                       |
- |  PoissonRatio     |   Poisson Ratio material property                       |
+--------------------------------------------------------------------------------------------------------------------
+ |    Name-value     |                      Description                        |    Value                          |
+ |-------------------|---------------------------------------------------------|-----------------------------------|
+ |  pressure         |   Pressure loads (multiple loads must be in a vector)   |                                   |
+ |  optimization     |   Type of topology optimization approach                |  Density, BESO, Level Set         |
+ |  densityType      |    Type of density-based method                         |  SIMP, RAMP                       |
+ |  preserveSupport  |  Preserve elements within the support region in the image |  0 – none                       |
+ |                   |                                                         | 1 – Only completely fixed elements|
+ |                   |                                                         | 2 – Only elements fixed in the x-axis|
+ |                   |                                                         | 3 – Only elements fixed in the y-axis|
+ |                   |                                                         | 4 – the union of 1 and 2|
+ |                   |                                                         | 5 – the union of 1 and 3|
+ |                   |                                                         | 6 - the union of 2 and 3|
+ |                   |                                                         | 7 – the union of 1, 2, and 3|
+ | preserveLoad      |  Preserve elements within the load region in the image  | 0 – none|
+ |                   |                                                         | 1 – elements in the force region|
+ |                   |                                                         | 2 – elements in the pressure region|
+ |                   |                                                         | 3 – the union of 1 and 2  |
+ |  filterRadius     |   Specify filter radius for density-based and BESO approaches | >1|
+ |  filter           |   Specify filter type for density-based approaches      | 1 – density|
+ |                   |                                                         | 2 – sensitivity|
+ |                   |                                                         | 3 - Heaviside projection|
+ |  beta             |  Regularization parameter for Heaviside projection      | >1|
+ |  penaltySIMP      |  Penalty value for SIMP density-based approach          | >1|
+ |  penaltyRAMP      |  Penalization factor for RAMP density-based approach    | >1|
+ |  ER               |  Evolution ratio for BESO                               | >0|
+ |  tau              |  Regularization parameter for level set method (reaction diffusion) | >0 |
+ |  YoungsModulus    |  Youngs Modulus material property                       | >1 |
+ |  PoissonRatio     |   Poisson Ratio material property                       | >0 |
  |  modelName        | Name given to model obtained by extrusion or revolution of the optimized topology. Must end in .stl |
- |  modelType        |  Modeling by extrusion or revolution                    |
- |  extrudeLength    |  Length for extrusion - a factor multiplied by min(*nelx*,*nely*) to obtain the length of the 3rd dimension|
- |  symmetry         | Specifies the position of the line of symmetry for symmetry-based modeling |
- |  distancetoaxis   | Distance between the optimized topology and its revolution axis to the left for revolution-based modeling |
- |  revolutionAngle  | The angle of revolution for revolution-based modeling   |
+ |  modelType        |  Modeling by extrusion or revolution                    | Extrude or revolve |
+ |  extrudeLength    |  Length for extrusion - a factor multiplied by min(*nelx*,*nely*) to obtain the length of the 3rd dimension| >0 |
+ |  symmetry         | Specifies the position of the line of symmetry for symmetry-based modeling | None, Left, bottom, right, and top |
+ |  distancetoaxis   | Distance between the optimized topology and its revolution axis to the left for revolution-based modeling | ≥0 |
+ |  revolutionAngle  | The angle of revolution for revolution-based modeling   | ≥0 |
 
  ###   Table 2: Color codes (RGB) for creating an input image file
  | Features              |  Color code rules                 | Recommended values  |                                     
