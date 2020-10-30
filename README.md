@@ -1,9 +1,9 @@
 # IbIPP
- **IbIPP** which stands for Image-based Initialization and Post-Processing code
+ **IbIPP** which stands for Image-based Initialization and Post-Processing
  is an open-source code for initializing and post-processing free-form 2D topology optimization problems.
 
  ## Syntax
- * IBIPP(FILE, NELX, VOLFFRAC) Performs topology optimization on the image provided in FILE using the number of elements in the x-direction, NELX, the required volume fraction, VOLFRAC and other default parameters.
+ * IBIPP(FILE, NELX, VOLFRAC) Performs topology optimization on the image provided in FILE using the number of elements in the x-direction, NELX, the required volume fraction, VOLFRAC and other default parameters.
 
  * IBIPP(FILE, NELX, VOLFRAC, FMAG, FANG) Performs topology optimization using FILE, NELX, VOLFRAC, vectors of force magnitudes, FMAG, and force angles, FANG, and other default parameters.
 
