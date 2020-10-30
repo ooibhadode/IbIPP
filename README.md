@@ -10,7 +10,7 @@
  * **IBIPP(...,'PropertyName',VALUE,'PropertyName',VALUE,...)** performs topology optimization using the following property values:
  ### Table 1: Name-value inputs
 --------------------------------------------------------------------------------------------------------------------
- |    Name-value     |                      Description                        |    Value                          |
+ |    Name-value     |                      Description          |    Value                          |
  |-------------------|---------------------------------------------------------|-----------------------------------|
  |  pressure         |   Pressure loads (multiple loads must be in a vector)   |                                   |
  |  optimization     |   Type of topology optimization approach                |  Density, BESO, Level Set         |
