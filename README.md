@@ -41,10 +41,8 @@
  |  distancetoaxis   | Distance between the optimized topology and its center  |
  |                   | of revolution to the left for revolution-based modeling |
  |  revolutionAngle  | The angle of revolution for revolution-based modeling   |
- |-----------------------------------------------------------------------------|
 
  ###   Table 2: Color codes (RGB) for creating an input image file
- ----------------------------------------------------------------------------------|
  | Features              |  Color code rules                 | Recommended values  |                                     
  |-----------------------|-----------------------------------|---------------------|
  | Designable domain     |  *R*∩*G*∩*B*<200                  |     0     0     0   |
@@ -54,8 +52,7 @@
  | Preserved region      |  *R*=0, 200≤*G*≤255, *B*=0        |     0    200    0   |
  | Fixed region          |  *R*=0, *G*=0, 200≤*B*≤255        |     0     0    200  |
  | Region fixed along x	 |  100≤*R*≤150, *G*=0, 200≤*B*≤255  |   100    0    200   |
- | Region fixed along y	 |  *R*=0, 200≤*G*≤255, 200≤*B*≤255  |    0    200   200   |    
- |---------------------------------------------------------------------------------|    
+ | Region fixed along y	 |  *R*=0, 200≤*G*≤255, 200≤*B*≤255  |    0    200   200   |     
   *  Note: for multiple forces or pressure, *R* should be in multiples of 5
     starting from 200 for forces (200, 205, 210,...etc) and *G* should be
     in multiples of 5 starting from 100 for pressures (100, 105, 110,..etc)
@@ -84,5 +81,4 @@
 
  ## Supporting Open-Source Codes
     **IbIPP** utilizes other open-source codes such as [top88.m](https://www.topopt.mek.dtu.dk/apps-and-software) by
-    Andreassen et.al, [esoL.m](https://link.springer.com/article/10.1007/s11831-016-9203-2) by Xia et. al., [levelset88.m](http://www.osdel.me.kyoto-u.ac.jp/members/yamada/codes.html.) by Otomori et.al,
-    [revolve2D.m](http://www.k-wave.org/) by Treeby and Cox, and [stlwrite.m](https://www.mathworks.com/matlabcentral/fileexchange/20922-stlwrite-write-ascii-or-binary-stl-files) by Sven.
+    Andreassen et.al, 
