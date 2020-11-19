@@ -63,7 +63,7 @@
 ## Examples:
 
 The following examples show how **ibipp** can be used.
-Images of some sample design problems and their corresponding input images for **ibipp** have been prepared and are in this repository. When developing an input image for a design problem, **Table 2** should be used while **Table 3** outlines the possible inputs. Any image tool can be used to prepare the input file but .png is the preferred file extension.
+Images of some sample design problems and their corresponding input images for **ibipp** have been prepared and are in this repository. When developing an input image for a design problem, **Table 2** should be used while **Table 1** outlines the possible name-value inputs. Any image tool can be used to prepare the input file but .png is the preferred file extension.
 
   *  Example 1:
     Optimize a half-MBB using default values of optional inputs
