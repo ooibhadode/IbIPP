@@ -8,7 +8,7 @@
 
  * **ibipp(*file*, *nelx*, *volfrac*,*fmag*,*fang*)** Performs topology optimization using *file*, *nelx*, *volfrac*, vectors of force magnitudes *fmag*, and force angles *fang*, and other default parameters.
 
- * **IBIPP(...,'PropertyName',VALUE,'PropertyName',VALUE,...)** performs topology optimization using the following property values:
+ * **ibipp(...,'PropertyName',VALUE,'PropertyName',VALUE,...)** performs topology optimization using the following property values:
  ### Table 1: Name-value inputs
 --------------------------------------------------------------------------------------------------------------------
  |    Name-value     |                      Description          |    Value                          |
