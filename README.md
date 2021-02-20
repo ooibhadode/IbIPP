@@ -79,7 +79,7 @@ Images of some sample design problems and their corresponding input images for *
 
   *  Example 4:
      Optimize a half-spanner design and generate an extruded full spanner STL model
-     - **ibipp('half_spanner.png',250,0.5,'pressure',[1,1],'preserveload',2,'preservesupport',1,'modelname','spanner.stl','symmetry','left','modeltype','extrude','extrudelength',0.2)**
+     - **ibipp('half_spanner.png',250,0.5,'pressure',[1,1],'preserveload',2,'preservesupport',1,'modelname','spanner.stl','symmetry','right','modeltype','extrude','extrudelength',0.2)**
 
 
 ## Supporting Open-Source Codes
