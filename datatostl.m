@@ -33,4 +33,4 @@ elseif strcmpi(form,'revolve')
     end 
     df = revolve2D(df1,theta);
 end    
-fv = isosurface(df,0.5); stlwrite(tx,fv);
+fv = isosurface(df,0.5); slt = split(tx,'.'); mkdir(slt{1}); stlwrite([slt{1} '\' tx],fv);
