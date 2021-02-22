@@ -67,19 +67,20 @@ Images of some sample design problems and their corresponding input images for *
 
   *  Example 1:
     Optimize a half-MBB using default values of optional inputs
-     - **ibipp('half_mbb.png',150,0.4)**
+     - **ibipp('Example_pics\half_mbb.png',150,0.4)**
+     
 
   *  Example 2:
      Optimize a Hammerhead pier using the BESO approach
-     - **ibipp('hammerhead.png',200,0.5,[2 1 1 2],[180 180 180 180],'optimization','BESO','filterRadius',3)**
+     - **ibipp('Example_pics\hammerhead.png',200,0.5,[2 1 1 2],[180 180 180 180],'optimization','BESO','filterRadius',3)**
 
   *  Example 3:
      Optimize a 2-point loading mechanical part while preserving load and support elements
-     - **ibipp('2point.png',300,0.45,[1 1],[0 0],'optimization','levelset','tau',5e-5,'preserveLoad',1,'preserveSupport',1)**
+     - **ibipp('Example_pics\2point.png',300,0.45,[1 1],[0 0],'optimization','levelset','tau',5e-5,'preserveLoad',1,'preserveSupport',1)**
 
   *  Example 4:
      Optimize a half-spanner design and generate an extruded full spanner STL model
-     - **ibipp('half_spanner.png',250,0.5,'pressure',[1,1],'preserveload',2,'preservesupport',1,'modelname','spanner.stl','symmetry','right','modeltype','extrude','extrudelength',0.2)**
+     - **ibipp('Example_pics\half_spanner.png',250,0.5,'pressure',[1,1],'preserveload',2,'preservesupport',1,'modelname','spanner.stl','symmetry','right','modeltype','extrude','extrudelength',0.2)**
 
 
 ## Supporting Open-Source Codes
