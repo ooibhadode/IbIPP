@@ -68,7 +68,7 @@ Images of some sample design problems and their corresponding input images for *
   *  Example 1:
     Optimize a half-MBB using default values of optional inputs
      - **ibipp('Example_pics\half_mbb.png',150,0.4)**
-![](Example_pics/top_half_mbb.jpg | width = 100)
+![](Example_pics/top_half_mbb.jpg){height = "100px" width = "50px"}
 
   *  Example 2:
      Optimize a Hammerhead pier using the BESO approach
