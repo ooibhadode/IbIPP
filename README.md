@@ -1,7 +1,7 @@
 # IbIPP
  **IbIPP** which stands for Image-based Initialization and Post-Processing
  is an open-source code for initializing and post-processing free-form 2D topology optimization problems.
- ![](Example_pics/IBIPP.png?raw=true "IBIPP top")
+ ![IBIPP problem](Example_pics/IBIPP.png?raw=true "IBIPP top")
 
  ## Syntax
  * **ibipp(*file*, *nelx*, *volfrac*)** Performs topology optimization on the image provided in *file* using the number of elements in the x-direction *nelx*, the required volume fraction *volfrac*, and other default parameters.
@@ -68,7 +68,7 @@ Images of some sample design problems and their corresponding input images for *
   *  Example 1:
     Optimize a half-MBB using default values of optional inputs
      - **ibipp('Example_pics\half_mbb.png',150,0.4)**
-
+![](Example_pics/Design problem for 2point.jpg)
 
   *  Example 2:
      Optimize a Hammerhead pier using the BESO approach
