@@ -81,13 +81,13 @@ Images of some sample design problems and their corresponding input images for *
      Optimize a 2-point loading mechanical part while preserving load and support elements
      - **ibipp('Example_pics\2point.png',300,0.45,[1 1],[0 0],'optimization','levelset','tau',5e-5,'preserveLoad',1,'preserveSupport',1)**
 
-
+<img src="Example_pics/Design_4_2point.jpg" width = "250"> <img src="Example_pics/2point.png" width = "250"> <img src="Example_pics/top_2point.jpg" width = "250">
 
   *  Example 4:
      Optimize a half-spanner design and generate an extruded full spanner STL model
      - **ibipp('Example_pics\half_spanner.png',250,0.5,'pressure',[1,1],'preserveload',2,'preservesupport',1,'modelname','spanner.stl','symmetry','right','modeltype','extrude','extrudelength',0.2)**
 
-<img src="Example_pics/Design_4_spanner.jpg" width = "250"> <img src="Example_pics/spanner.png" width = "250"> <img src="Example_pics/top_spanner.jpg" width = "250"> <img src="Example_pics/spanner_stl.jpg" width = "250">
+<img src="Example_pics/Design_4_spanner.jpg" width = "250"> <img src="Example_pics/half_spanner.png" width = "250"> <img src="Example_pics/top_spanner.jpg" width = "250"> <img src="Example_pics/spanner_stl.JPG" width = "250">
 
 
 ## Supporting Open-Source Codes
