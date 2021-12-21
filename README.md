@@ -88,7 +88,7 @@ Images of some sample design problems and their corresponding input images for *
 
   *  Example 4:
      Optimize a half-spanner design and generate an extruded full spanner STL model
-     
+
      - **ibipp('Example_pics\half_spanner.png',250,0.5,'pressure',[1,1],'preserveload',2,'preservesupport',1,'modelname','spanner.stl','symmetry','right','modeltype','extrude','extrudelength',0.2)**
 
 <img src="Example_pics/Design_4_spanner.jpg" width = "250"> <img src="Example_pics/half_spanner.png" width = "250"> <img src="Example_pics/top_spanner.jpg" width = "250"> <img src="Example_pics/spanner_stl.JPG" width = "250">
@@ -98,3 +98,6 @@ Images of some sample design problems and their corresponding input images for *
 **IBIPP** utilizes other open-source codes such as [top88.m](https://www.topopt.mek.dtu.dk/apps-and-software) by
 Andreassen et.al, [esoL.m](https://link.springer.com/article/10.1007/s11831-016-9203-2) by Xia et. al., [levelset88.m](http://www.osdel.me.kyoto-u.ac.jp/members/yamada/codes.html.) by Otomori et.al,
 [revolve2D.m](http://www.k-wave.org/) by Treeby and Cox, and [stlwrite.m](https://www.mathworks.com/matlabcentral/fileexchange/20922-stlwrite-write-ascii-or-binary-stl-files) by Sven.
+
+## To Cite
+If you find this code helpful in your work, please cite [this open access paper](https://www.sciencedirect.com/science/article/pii/S2352711021000467)
