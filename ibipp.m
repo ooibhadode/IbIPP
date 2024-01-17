@@ -11,6 +11,7 @@ default_beta = 2; default_er = 0.15; default_E0 = 1; default_v = 0.3;
 default_tau = 2e-4; default_dist2a = 0; default_theta = 360;
 default_opt = 'Density'; default_opt1 = 'SIMP'; default_text = 'none';
 default_mtype = 'extrude'; default_exlength = 0.1; default_sym = 'none';
+default_ER = 0.5; default_ngrid = 4;
 
 %% Input Parser for required, optional and name-value parameters
 pp = inputParser;
@@ -26,6 +27,7 @@ addParameter(pp,'YoungsModulus',default_E0); addParameter(pp,'PoissonRatio',defa
 addParameter(pp,'distancetoaxis',default_dist2a); addParameter(pp,'revolutionAngle',default_theta);
 addParameter(pp,'modelName',default_text); addParameter(pp,'modelType',default_mtype);
 addParameter(pp,'extrudeLength',default_exlength); addParameter(pp,'Symmetry',default_sym);
+addParameter(pp,'EvolutionRate',default_ER); addParameter(pp,'NoGridPoints',default_ngrid);
 
 parse(pp,domain,nelx,volfrac,varargin{:});
 
@@ -37,7 +39,7 @@ q = pp.Results.penaltyRAMP;
 ft = pp.Results.filter; rmin = pp.Results.filterRadius; er = pp.Results.ER;
 tau = pp.Results.tau; E0 = pp.Results.YoungsModulus;
 v = pp.Results.PoissonRatio;
-beta = pp.Results.beta;
+beta = pp.Results.beta; ER = default_ER; ngrid = default_ngrid;
 
 %% Load and boundary conditions
 Fmag = pp.Results.forces; Fang = pp.Results.forceAngle;
@@ -70,11 +72,19 @@ elseif strcmpi(opt_type,'BESO')
 elseif strcmpi(opt_type,'levelSet')
     % Level set
     [xPhys,~] = levelset88mod(nelx,nely,volfrac,tau,F,fixeddofs,NonD,MusD,E0,v);
+elseif strcmpi(opt_type,'SEMDOT')
+    % SEMDOT
+    [~,xg] = semdot(nelx,nely,volfrac,rmin,F,fixeddofs,NonD,MusD,beta,E0,v,ER,ngrid);
 end
 
 %% Post-processing
 if ~isempty(find(strcmpi(varargin,tx), 1))
-    datatostl(nelx,nely,xPhys,tx,form,ht,lr,theta,symm)
+    if strcmpi(opt_type,'SEMDOT')
+        [nely,nelx] = size(xg);
+        datatostl(nelx,nely,xg,tx,form,ht,lr,theta,symm)
+    else
+        datatostl(nelx,nely,xPhys,tx,form,ht,lr,theta,symm)
+    end
 end
 end
 % This Matlab code was written by Osezua Ibhadode                          %                                     %
