@@ -14,7 +14,7 @@
  |    Name-value     |                      Description          |    Value                          |
  |-------------------|---------------------------------------------------------|-----------------------------------|
  |  pressure         |   Pressure loads (multiple loads must be in a vector)   |                                   |
- |  optimization     |   Type of topology optimization approach                |  Density, BESO, Level Set         |
+ |  optimization     |   Type of topology optimization approach                |  Density, BESO, Level Set, SEMDOT |
  |  densityType      |    Type of density-based method                         |  SIMP, RAMP                       |
  |  preserveSupport  |  Preserve elements within the support region in the image |  0 – none                       |
  |                   |                                                         | 1 – Only completely fixed elements|
